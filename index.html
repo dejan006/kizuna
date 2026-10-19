@@ -14,7 +14,7 @@
 <script type="module">
 const K='kizuna-v1';
 // Trage deine drei Supabase-Werte ein. Nur Publishable Key, NIEMALS einen Secret Key.
-const CONFIG={url:'DEINE_SUPABASE_PROJEKT_URL',key:'DEIN_SB_PUBLISHABLE_KEY',adminId:'DEINE_ADMIN_USER_UUID'};
+const CONFIG={url:'https://nqoxmmabfnjtnembuljf.supabase.co',key:'sb_publishable_9cmYK9CF3EsfjEwejo8EaA_PC2_QvGX',adminId:'9a0a2852-a511-4e35-a5c3-5799953ae7c0'};
 const configured=()=>/^https:\/\/[a-z0-9-]+\.supabase\.co\/?$/.test(CONFIG.url)&&/^[0-9a-f]{8}-[0-9a-f-]{27,}$/i.test(CONFIG.adminId)&&CONFIG.key.startsWith('sb_publishable_');
 const icons={all:'▦',anime:'▶',manga:'▤',active:'◷',settings:'⚙'};
 const statusNames={watching:'Am Schauen',reading:'Am Lesen',completed:'Abgeschlossen',planned:'Geplant',paused:'Pausiert',dropped:'Abgebrochen'};
@@ -40,7 +40,7 @@ function renderSettings(){
  const admin=isAdmin(),signed=!!cloud?.user;
  $('#main').innerHTML=`<div class="sectionhead"><h2>KIZUNA Cloud</h2></div>
  <div class="settingcard"><h3>${admin?'👑 Admin angemeldet':signed?'⚠ Kein Admin-Account':'👁 Öffentliche Sammlung'}</h3>
- <p>${admin?'Du kannst deine Sammlung bearbeiten und für alle veröffentlichen.':signed?'Dieses Konto besitzt keine Schreibrechte.':'Besucher können deine veröffentlichte Library anschauen. Nur der Admin darf Änderungen speichern.'}</p>
+ <p>${admin?'Du kannst deine Sammlung bearbeiten und für alle veröffentlichen.':signed?'Dieses Konto besitzt keine Schreibrechte.':'Besucher können deine veröffentlichte Library anschauen. Nur der Admin darf Änderungen speichern!'}</p>
  ${admin?`<button class="btn primary" id="publishLocal">Lokale MacBook-Liste veröffentlichen</button> <button class="btn" id="signOut">Abmelden</button>`:signed?`<button class="btn" id="signOut">Abmelden</button>`:`<button class="btn primary" id="adminLogin">Admin-Login</button>`}
  <p class="syncstate" id="syncstate">${configured()?(published?'Cloud-Sammlung geladen':'Noch keine veröffentlichte Sammlung vorhanden'):'Supabase-Konfiguration fehlt in index.html'}</p></div>
  ${admin?`<div class="settingcard"><h3>⬇ Backup exportieren</h3><p>Deine lokale Collection als JSON sichern.</p><button class="btn" id="export">Backup herunterladen</button></div><div class="settingcard"><h3>⬆ Backup importieren</h3><p>JSON-Backup importieren und danach in der Cloud speichern.</p><button class="btn" id="import">Backup importieren</button></div>`:''}`;
