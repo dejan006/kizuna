@@ -32,7 +32,7 @@
 <script type="module">
 const K='kizuna-v1';
 // Trage deine drei Supabase-Werte ein. Nur Publishable Key, NIEMALS einen Secret Key.
-const CONFIG={url:'DEINE_SUPABASE_PROJEKT_URL',key:'DEIN_SB_PUBLISHABLE_KEY',adminId:'DEINE_ADMIN_USER_UUID'};
+const CONFIG={url:'https://nqoxmmabfnjtnembuljf.supabase.co',key:'sb_publishable_9cmYK9CF3EsfjEwejo8EaA_PC2_QvGX',adminId:'sb_publishable_9cmYK9CF3EsfjEwejo8EaA_PC2_QvGX'};
 const configured=()=>/^https:\/\/[a-z0-9-]+\.supabase\.co\/?$/.test(CONFIG.url)&&/^[0-9a-f]{8}-[0-9a-f-]{27,}$/i.test(CONFIG.adminId)&&CONFIG.key.startsWith('sb_publishable_');
 const icons={all:'▦',anime:'▶',manga:'▤',active:'◷',settings:'⚙',ranking:'★'};
 const statusNames={watching:'Am Schauen',reading:'Am Lesen',completed:'Abgeschlossen',planned:'Geplant',paused:'Pausiert',dropped:'Abgebrochen'};
@@ -145,3 +145,4 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
 
 init();
 </script></body></html>
+
